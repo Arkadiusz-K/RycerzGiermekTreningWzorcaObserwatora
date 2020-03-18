@@ -1,26 +1,24 @@
 public class Giermek implements GiermekInterface {
     String imie;
     int lvlGiermka;
-    int lvlRycerza = 1;
-    int wyzszoscRycerza;
+    int lvlRycerza;
 
     Giermek(String im, int lvlG){
         imie = im;
         lvlGiermka = lvlG;
     }
 
-    public void aktualizacja(int lvl, int pogardaDlaMnie) {
+    public void aktualizacja(int lvl) {
         lvlRycerza = lvl;
-        wyzszoscRycerza = pogardaDlaMnie;
-        podniesLvl(lvlRycerza);
+        podniesLvl();
     }
 
-    void podniesLvl(int lvlRycerza){
-        lvlGiermka = lvlRycerza;
+    // Jesli rycerz zdobedzie 5 lvl to giermek zdobywa 1 lvl
+    void podniesLvl(){
+        lvlGiermka++;
         System.out.println("-----------------------------------------------------");
-        System.out.println("Jesli rycerz jest silniejszy to ja tez jestem silniejszy! Aktualny lvl giermka: "+lvlGiermka);
-        System.out.println("Jego duma to obecnie: "+wyzszoscRycerza);
-        System.out.println("Powiedzial "+imie);
+        System.out.println("Jesli rycerz jest silniejszy o 5 leveli, to ja o 1!");
+        System.out.println("Poziom rycerza: "+lvlRycerza+", a moj ("+imie+") poziom to: "+lvlGiermka);
     }
 
     String getImie(){

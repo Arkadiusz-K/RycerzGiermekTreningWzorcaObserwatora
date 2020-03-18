@@ -1,3 +1,3 @@
 public interface GiermekInterface {
-    void aktualizacja(int lvl, int pogardaDlaMnie);
+    void aktualizacja(int lvl);
 }

@@ -3,3 +3,4 @@ public interface RycerzInterface {
     void usunObserwatora(Giermek g);
     void powiadomObserwatora();
 }
+

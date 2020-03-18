@@ -5,6 +5,8 @@ public class Rycerz implements RycerzInterface{
     int lvl;
     int pogardaDlaInnych;
     ArrayList<Giermek> obserwatorzy;
+    boolean changed = false;
+    int lvlZRzedu =0;
 
     Rycerz(String im, int l, int pogarda){
         obserwatorzy = new ArrayList<Giermek>();
@@ -27,22 +29,21 @@ public class Rycerz implements RycerzInterface{
     }
 
     public void powiadomObserwatora(){
-        //for(int i=0;i<obserwatorzy.size();i++){
-            for(Giermek i : obserwatorzy){
-            i.aktualizacja(lvl,pogardaDlaInnych);
+        for (Giermek i : obserwatorzy)
+            i.aktualizacja(lvl);
+    }
+
+    void zdobycie4leveli(){
+        lvl+=4;
+        lvlZRzedu+=4;
+        if(lvlZRzedu>5) {
+            changed = true;
+            lvlZRzedu-=5; // zalozenie ze jednoczesnie rycerz nie moze wbic wiecej niz 5 leveli
         }
-    }
-
-    void zdobycieLvl(){
-        lvl++;
-        pogardaDlaInnych+=3;
-        powiadomObserwatora();
-    }
-
-    void UstawRycerza(String im, int l, int pogarda){
-        imie = im;
-        lvl = l;
-        pogardaDlaInnych = pogarda;
+        if(changed) {
+            powiadomObserwatora();
+            changed = false;
+        }
     }
 
     int getLvl(){

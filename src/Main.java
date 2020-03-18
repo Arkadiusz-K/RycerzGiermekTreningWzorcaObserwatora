@@ -13,7 +13,7 @@ public class Main {
         System.out.println("lvl przeciwnika: "+lvlPrzeciwnika);
         if(jurandZeSpychowa.getLvl()>=lvlPrzeciwnika){
             System.out.println("Rycerz "+jurandZeSpychowa.getImie()+" zdobyl lvl i mowi o tym giermkom!");
-            jurandZeSpychowa.zdobycieLvl();
+            jurandZeSpychowa.zdobycie4leveli();
         } else
             System.out.println("Rycerz przegral :( ");
 
@@ -23,7 +23,7 @@ public class Main {
         System.out.println("lvl przeciwnika: "+lvlPrzeciwnika);
         if(jurandZeSpychowa.getLvl()>=lvlPrzeciwnika){
             System.out.println("Rycerz "+jurandZeSpychowa.getImie()+" zdobyl lvl i mowi o tym giermkom!");
-            jurandZeSpychowa.zdobycieLvl();
+            jurandZeSpychowa.zdobycie4leveli();
         } else
             System.out.println("Rycerz przegral :( ");
     }
